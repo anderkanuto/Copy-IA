@@ -1,151 +1,280 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Copy IA Veloz - Transforme Palavras em Vendas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CopyIA Veloz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-    body { background: #f9f9f9; color: #333; line-height: 1.6; }
-    header { background: #111; color: #fff; padding: 20px; position: fixed; width: 100%; top: 0; z-index: 1000; }
-    .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: #fff; margin-left: 20px; text-decoration: none; font-weight: 500; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 100px 20px 60px; max-width: 1000px; margin: 0 auto; }
-    .hero { text-align: center; padding-top: 160px; }
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; color: #1a1a1a; }
-    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
-    .btn { display: inline-block; background: #28a745; color: #fff; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
-    .btn:hover { background: #218838; }
-    .features, .testimonials, .pricing, .contact { background: #fff; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.05); margin-bottom: 40px; }
-    .features ul, .pricing ul { list-style: none; padding: 20px; }
-    .features li, .pricing li { margin-bottom: 15px; padding-left: 1.5em; position: relative; }
-    .features li:before, .pricing li:before { content: "✅"; position: absolute; left: 0; }
-    .testimonials p { font-style: italic; margin: 20px; }
-    .pricing-table { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; padding: 20px; }
-    .pricing-table .plan { border: 2px solid #28a745; border-radius: 8px; padding: 20px; text-align: center; }
-    .plan h3 { margin-bottom: 10px; }
-    .plan .price { font-size: 2rem; margin: 15px 0; }
-    .timer { font-size: 1.2rem; color: #dc3545; margin-top: 10px; }
-    .contact form { display: flex; flex-direction: column; padding: 20px; }
-    .contact input, .contact textarea { margin-bottom: 15px; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
-    .contact button { background: #007bff; color: #fff; border: none; padding: 15px; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
-    .contact button:hover { background: #0069d9; }
-    footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #666; }
-    @media(max-width:600px) {
-      .hero h1 { font-size: 2.2rem; }
+    :root {
+      --verde-principal: #4CAF50;
+      --verde-secundario: #388E3C;
+      --cinza-escuro: #2E2E2E;
+      --cinza-claro: #F2F2F2;
+      --branco: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--cinza-escuro);
+      color: var(--branco);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--verde-principal);
+      padding: 20px 0;
+      text-align: center;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--branco);
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--cinza-claro);
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--verde-principal), var(--verde-secundario));
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background-color: var(--branco);
+      color: var(--verde-principal);
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      margin: 10px;
+      display: inline-block;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: var(--cinza-claro);
+      color: var(--cinza-escuro);
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--verde-principal);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .planos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .plano {
+      background: var(--cinza-claro);
+      color: var(--cinza-escuro);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .plano h3 {
+      color: var(--verde-secundario);
+    }
+
+    .plano ul {
+      padding-left: 20px;
+    }
+
+    .depoimentos {
+      background: var(--verde-secundario);
+      padding: 60px 20px;
+    }
+
+    .depoimento {
+      background: var(--branco);
+      color: var(--cinza-escuro);
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: var(--cinza-claro);
+      color: var(--cinza-escuro);
+      text-align: center;
+      padding: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="nav-container">
-      <div class="logo"><a href="#" style="color:#fff;font-weight:bold;font-size:1.2rem;text-decoration:none;">Copy IA Veloz</a></div>
-      <nav>
-        <a href="#features">Benefícios</a>
-        <a href="#testimonials">Depoimentos</a>
-        <a href="#pricing">Planos</a>
-        <a href="#contact">Contato</a>
-      </nav>
-    </div>
+    <h1>Copy IA Veloz</h1>
+    <nav>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#planos">Planos</a>
+      <a href="#paraquem">Para Quem</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Falar Agora</a>
+    </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <h1>Transforme Palavras em Vendas com IA</h1>
-    <p>Use copywriting estratégico aliado à inteligência artificial para aumentar suas conversões em até 7 dias.</p>
-    <a href="#contact" class="btn">Quero Começar Agora</a>
-    <div class="timer" id="timer"></div>
+  <section class="hero">
+    <h2>Textos prontos para vender. Rápido, com inteligência artificial e afiado por quem entende de gente.</h2>
+    <a href="#planos" class="cta-button">Ver Planos</a>
+    <a href="#contato" class="cta-button">Falar com Especialista</a>
   </section>
 
-  <section class="features" id="features">
-    <h2 style="text-align:center; margin-bottom:20px;">O que você recebe</h2>
+  <section class="section" id="beneficios">
+    <h2>O que você recebe:</h2>
+    <p>Tudo o que você precisa para transformar suas ideias em vendas reais, com textos persuasivos e estratégicos.</p>
     <ul>
-      <li>Headline matadora + descrição de produto/serviço</li>
-      <li>3 posts prontos para redes sociais com CTA</li>
-      <li>Roteiro de vídeo de vendas ou pitch para stories</li>
-      <li>Copy para botão/landing page que converte</li>
-      <li>Ajustes finos por WhatsApp</li>
-      <li>Entrega em até 24 horas úteis</li>
+      <li><strong>Headline Matadora:</strong> Títulos irresistíveis + descrição persuasiva que capturam a atenção imediatamente.</li>
+      <li><strong>Posts Prontos:</strong> 3 posts completos com call-to-action de vendas.</li>
+      <li><strong>Roteiro de Vídeo:</strong> Script para vídeos de vendas ou pitch para stories.</li>
+      <li><strong>Copy para CTA:</strong> Textos persuasivos para botões e landing pages.</li>
+      <li><strong>Ajustes por WhatsApp:</strong> Suporte personalizado até a perfeição.</li>
+      <li><strong>Entrega Rápida:</strong> Material pronto em até 24 horas úteis.</li>
     </ul>
   </section>
 
-  <section class="testimonials" id="testimonials">
-    <h2 style="text-align:center; margin-bottom:20px;">Depoimentos</h2>
-    <p>“Fechei 4 alunos em 3 dias com os textos do Copy IA Veloz!” – <strong>Mariana, Mentora</strong></p>
-    <p>“Headline, roteiro e postagens prontos. Vendi no mesmo dia.” – <strong>Rafael, Loja de suplementos</strong></p>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <h2 style="text-align:center; margin-bottom:20px;">Planos</h2>
-    <div class="pricing-table">
-      <div class="plan">
+  <section class="section" id="planos">
+    <h2>Escolha o plano ideal para você</h2>
+    <div class="planos">
+      <div class="plano">
         <h3>Copy Express</h3>
-        <div class="price">R$197</div>
+        <p><strong>R$197 / único</strong></p>
         <ul>
-          <li>Entrega em até 24h</li>
-          <li>Headline + 3 posts + roteiro</li>
+          <li>Kit completo de textos</li>
+          <li>Entrega em 24h úteis</li>
+          <li>1 rodada de ajustes</li>
         </ul>
-        <a href="#contact" class="btn">Escolher</a>
+        <a class="cta-button" href="#contato">Selecionar Plano</a>
       </div>
-      <div class="plan">
-        <h3>Copy Turbo</h3>
-        <div class="price">R$497</div>
+      <div class="plano">
+        <h3>Copy Turbo <span style="color:red; font-weight:bold;">MAIS POPULAR</span></h3>
+        <p><strong>R$497 / único</strong></p>
         <ul>
           <li>Tudo do Express</li>
-          <li>Consultoria de 30min</li>
+          <li>Consultoria estratégica de 30min</li>
+          <li>2 rodadas de ajustes</li>
+          <li>Prioridade no atendimento</li>
         </ul>
-        <a href="#contact" class="btn">Escolher</a>
+        <a class="cta-button" href="#contato">Selecionar Plano</a>
       </div>
-      <div class="plan">
-        <h3>Mentoria 1:1</h3>
-        <div class="price">R$997</div>
+      <div class="plano">
+        <h3>Mentoria Copy Estratégico</h3>
+        <p><strong>R$997 / único</strong></p>
         <ul>
-          <li>Sessão de 1h</li>
-          <li>Análise completa de posicionamento</li>
+          <li>Tudo do plano Turbo</li>
+          <li>Sessão estratégica 1:1 de 1h</li>
+          <li>Plano de posicionamento completo</li>
+          <li>Ajustes ilimitados por 7 dias</li>
         </ul>
-        <a href="#contact" class="btn">Escolher</a>
+        <a class="cta-button" href="#contato">Selecionar Plano</a>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <h2 style="text-align:center; margin-bottom:20px;">Fale Comigo</h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Seu nome" required />
-      <input type="email" name="email" placeholder="Seu email" required />
-      <input type="text" name="whatsapp" placeholder="Seu WhatsApp" required />
-      <textarea name="message" rows="4">Quero o Copy IA Veloz</textarea>
-      <button type="submit">Enviar Mensagem</button>
-    </form>
+  <section class="section" id="paraquem">
+    <h2>Quem se beneficia do Copy IA Veloz?</h2>
+    <ul>
+      <li><strong>Empreendedores:</strong> Que não sabem como escrever para vender.</li>
+      <li><strong>Influencers e Afiliados:</strong> Que precisam de conteúdo para promover produtos.</li>
+      <li><strong>Prestadores de Serviço:</strong> Que querem converter mais clientes sem escrever textos.</li>
+    </ul>
+  </section>
+
+  <section class="depoimentos" id="depoimentos">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="depoimento">
+      <strong>Mariana Silva - Coach de Carreira</strong>
+      <p>"Fechei 4 alunos em 3 dias com os textos do Copy IA Veloz! O investimento se pagou mais de 10x. Recomendo demais!"</p>
+    </div>
+    <div class="depoimento">
+      <strong>Rafael Mendes - Infoprodutor</strong>
+      <p>"Headline, roteiro e postagens prontos. Vendi no mesmo dia. A qualidade dos textos é impressionante."</p>
+    </div>
+    <div class="depoimento">
+      <strong>Carla Oliveira - Consultora de Marketing</strong>
+      <p>"Economizei horas de trabalho e entreguei muito mais para meus clientes. É essencial pra mim hoje."</p>
+    </div>
+    <div class="depoimento">
+      <strong>Paulo Rodrigues - Afiliado Digital</strong>
+      <p>"Minhas taxas de conversão aumentaram 230% com os textos do Copy IA Veloz. Incrível!"</p>
+    </div>
+  </section>
+
+  <section class="section" id="contato">
+    <h2>Pronto para começar?</h2>
+    <p>Escolha seu plano e transforme seus textos em máquinas de vendas hoje mesmo.</p>
+    <p><strong>Nome:</strong> Anderson Canuto da Silva</p>
+    <p><strong>WhatsApp:</strong> 82996023679</p>
+    <p><strong>Plano escolhido:</strong> Copy Express - R$197</p>
+    <a href="https://wa.me/5582996023679" class="cta-button" target="_blank">Falar no WhatsApp</a>
+    <p>Resposta em até 2 horas.</p>
+  </section>
+
+  <section class="section">
+    <h2>Perguntas Frequentes</h2>
+    <ul>
+      <li><strong>Quanto tempo leva para receber meus textos?</strong></li>
+      <li><strong>Como funciona o processo de criação dos textos?</strong></li>
+      <li><strong>Posso solicitar ajustes nos textos?</strong></li>
+      <li><strong>Quais formas de pagamento são aceitas?</strong></li>
+      <li><strong>Existe garantia de satisfação?</strong></li>
+    </ul>
   </section>
 
   <footer>
-    © 2025 Copy IA Veloz. Todos os direitos reservados.
+    <p><strong>Copy IA Veloz</strong> — Textos prontos para vender.</p>
+    <p>Links Rápidos: Benefícios | Planos | Para Quem | Depoimentos | Contato</p>
+    <p>(00) 00000-0000 | contato@copyiaveloz.com.br</p>
+    <p>&copy; 2025 Copy IA Veloz. Todos os direitos reservados.</p>
   </footer>
-
-  <script>
-    // Contador regressivo de 72h
-    const deadline = Date.now() + 72 * 60 * 60 * 1000;
-    function updateTimer() {
-      const now = Date.now();
-      let diff = deadline - now;
-      if (diff < 0) diff = 0;
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      document.getElementById('timer').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s Restantes`;
-    }
-    setInterval(updateTimer, 1000);
-    updateTimer();
-
-    // Formulário básico (simulação de automação)
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Obrigado pela mensagem! Em breve entrarei em contato.');
-      this.reset();
-    });
-  </script>
 </body>
 </html>
