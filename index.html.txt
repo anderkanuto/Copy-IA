@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copy IA Veloz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    h2 {
+      color: #111;
+    }
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .cta {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .cta a {
+      background: #00c86f;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "✅ ";
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Copy IA Veloz</h1>
+  <p>Textos prontos para vender. Rápido, com inteligência artificial e afiado por quem entende de gente.</p>
+</header>
+
+<section>
+  <h2>O que você recebe:</h2>
+  <ul>
+    <li>Headline matadora + descrição de produto/serviço</li>
+    <li>3 posts prontos para redes sociais com CTA de venda</li>
+    <li>Roteiro de vídeo de vendas ou pitch para stories</li>
+    <li>Copy para botão/landing page que chama o clique</li>
+    <li>Ajustes finos por WhatsApp</li>
+    <li>Entrega em até 24 horas úteis</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Planos:</h2>
+  <ul>
+    <li><strong>Copy Express – R$197:</strong> Kit completo entregue em 24h</li>
+    <li><strong>Copy Turbo – R$497:</strong> Tudo do Express + consultoria estratégica de 30min</li>
+    <li><strong>Mentoria Copy Estratégico – R$997:</strong> Sessão 1:1 + plano de posicionamento</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Para quem é:</h2>
+  <ul>
+    <li>Empreendedores que não sabem como escrever para vender</li>
+    <li>Influencers, afiliados e prestadores de serviço</li>
+    <li>Quem quer converter, mas não quer perder tempo</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Depoimentos:</h2>
+  <p><em>“Fechei 4 alunos em 3 dias com os textos do Copy IA Veloz!” – Mariana</em></p>
+  <p><em>“Headline, roteiro e postagens prontos. Vendi no mesmo dia.” – Rafael</em></p>
+</section>
+
+<section class="cta">
+  <h2>Pronto para começar?</h2>
+  <p>Me chama no WhatsApp e diga: <strong>"Quero o Copy IA Veloz"</strong></p>
+  <a href="https://wa.me/55SEUNUMERO" target="_blank">Falar no WhatsApp</a>
+</section>
+
+<footer>
+  © 2025 Copy IA Veloz. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
